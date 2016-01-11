@@ -28,7 +28,7 @@ module.exports = {
 
   allMeals: function(req, res, next) {
     console.log('You accessed all meals')
-    findAllMeals({})
+    findAllMeals({status: "false"})
       .then(function(meals) {
         res.json(200, meals);
       })
