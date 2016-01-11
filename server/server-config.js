@@ -41,16 +41,16 @@ var checkUser = function (req,res,next) {
 };
 
 
-app.post('/api/signin', UserController.signin);
+// app.post('/api/signin', UserController.signin);
 
-app.get('/api/signin', UserController.signin);
+// app.get('/api/signin', UserController.signin);
 
 
-app.get('/api/request', checkUser /*....*/);
+// app.get('/api/request', checkUser /*....*/);
 
-app.post('/api/register', UserController.create)
+// app.post('/api/register', UserController.create)
 
-app.get('/api/browse', MealController.allMeals) 
+// app.get('/api/browse', MealController.allMeals) 
 
 // app.post('/api/request', checkUser /*....*/);
 
@@ -61,14 +61,14 @@ app.get('/api/browse', MealController.allMeals)
 // // This endpoint returns all the meals. TODO refactor
 
 // //////////////new routes//////////////////////////////////
-// // app.put('/api/makerequest', MealController.makeRequest);
+app.put('/api/makerequest', MealController.makeRequest);
 
 
-// // app.put('/api/confirmrequest', MealController.confirmrequest);
+app.put('/api/confirmrequest', MealController.confirmRequest);
 
-// app.get('/api/viewpending', UserController.viewRequest);
+app.get('/api/viewpending', MealController.viewPending);
 
-// app.get('/api/viewuser',MealController.viewRequest);
+app.get('/api/viewuser', MealController.viewUsers);
 // // //////////////////////////////////////////////////////
 
 // // this endpoint returns all the meals objects form the db. TODO check with Jonathon to sync endpoint name 
@@ -76,7 +76,7 @@ app.get('/api/browse', MealController.allMeals)
 
 
 // // this endpoint puts a meal to the db
-app.post('/api/create', checkUser, MealController.create);
+app.post('/api/create', MealController.create);
 
 // TODO: Inquire about logout routing -- if user wants to logout, end their session and send them to signin
 app.get('/api/logout', function(req, res) {
