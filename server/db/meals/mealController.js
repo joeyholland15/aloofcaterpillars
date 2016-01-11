@@ -19,8 +19,7 @@ module.exports = {
   			  title: req.body.title,
   			  protein: req.body.protein,
   			  creator: req.body.creator,
-  			  consumer: req.body.consumer,
-          status: 'none'
+  			  consumer: req.body.consumer
 		    }).then(function(){
           res.send(201,'success');
         });
@@ -28,7 +27,7 @@ module.exports = {
 
   allMeals: function(req, res, next) {
     console.log('You accessed all meals')
-    findAllMeals({status: "false"})
+    findAllMeals({status: 'false'})
       .then(function(meals) {
         res.json(200, meals);
       })
